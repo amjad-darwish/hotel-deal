@@ -54,7 +54,9 @@
 		color: #f7c019;
 	}
 	
-	#hlocation {
+	#hLocation {
+		font-family: sans-serif;
+		font-size: small;
 	}
 	
 	.my-row {
@@ -165,4 +167,22 @@
 		border: groove gray;
 		border-radius: 15px;
 		background-color: #ffffff;
+	}
+	
+	.small-txt {
+		font-family: fantasy;
+		font-size: smaller;
+	}
+	
+	.gray-badge {
+		background-color: #d0d0c9;
+		border: outset;
+		border-radius: 5px;
+		text-align: center;
+		text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 0;
+		padding: 0% 2% 0% 2%;
+	}
+	
+	span#star {
+		display: inline-flex;
 	}

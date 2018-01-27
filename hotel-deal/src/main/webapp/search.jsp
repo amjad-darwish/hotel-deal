@@ -30,12 +30,12 @@
 					<div id="dateDiv">
 						<div id="checkInDiv" class="quarter-div">
 							<span class="my-row search-form-label">Check-in</span>
-							<input id="checkInDate" type="date" class="dateTxt" placeholder="DD/MM/YYYY" name="minTripStartDate">			
+							<input id="checkInDate" type="text" class="dateTxt" placeholder="DD/MM/YYYY" name="minTripStartDate">			
 						</div>
 						
 						<div id="checkOutDiv" class="quarter-div">
 							<span class="my-row search-form-label">Check-out</span>
-							<input id="checkOutDate" type="date" class="dateTxt" placeholder="DD/MM/YYYY" name="maxTripStartDate">			
+							<input id="checkOutDate" type="text" class="dateTxt" placeholder="DD/MM/YYYY" name="maxTripStartDate">			
 						</div>
 					</div>
 					

@@ -8,30 +8,30 @@ package com.hotel.deal.dto.criteria;
  *
  */
 public class DealResultDTO {
-	private String destinationName;
-	private long hotelId;
 	private String hotelName;
 	private String hotelImageUrl;
-	private String hotelDesc;
-	private String language;
 	private String hotelRating;
-	private String averagePricePerNight;
-	private String feesAndTax;
+	private double guestReview;
+	private String hotelUrl;	
+	private int numberOfReviews;
+	private double newPrice;
+	private double oldPrice;
 	private String currency;
-	private String hotelUrl;
+	private String destinationLongName;
+	private String hotelCity;
 	
 	/**
-	 * @return the hotelId
+	 * @return the currency
 	 */
-	public long getHotelId() {
-		return hotelId;
+	public String getCurrency() {
+		return currency;
 	}
-
+	
 	/**
-	 * @param hotelId the hotelId to set
+	 * @param currency the currency to set
 	 */
-	public void setHotelId(long hotelId) {
-		this.hotelId = hotelId;
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 
 	/**
@@ -49,20 +49,6 @@ public class DealResultDTO {
 	}
 
 	/**
-	 * @return the destinationName
-	 */
-	public String getDestinationName() {
-		return destinationName;
-	}
-
-	/**
-	 * @param destinationName the destinationName to set
-	 */
-	public void setDestinationName(String destinationName) {
-		this.destinationName = destinationName;
-	}
-
-	/**
 	 * @return the hotelImageUrl
 	 */
 	public String getHotelImageUrl() {
@@ -74,34 +60,6 @@ public class DealResultDTO {
 	 */
 	public void setHotelImageUrl(String hotelImageUrl) {
 		this.hotelImageUrl = hotelImageUrl;
-	}
-
-	/**
-	 * @return the hotelDesc
-	 */
-	public String getHotelDesc() {
-		return hotelDesc;
-	}
-
-	/**
-	 * @param hotelDesc the hotelDesc to set
-	 */
-	public void setHotelDesc(String hotelDesc) {
-		this.hotelDesc = hotelDesc;
-	}
-
-	/**
-	 * @return the language
-	 */
-	public String getLanguage() {
-		return language;
-	}
-
-	/**
-	 * @param language the language to set
-	 */
-	public void setLanguage(String language) {
-		this.language = language;
 	}
 
 	/**
@@ -119,45 +77,17 @@ public class DealResultDTO {
 	}
 
 	/**
-	 * @return the averagePricePerNight
+	 * @return the guestReview
 	 */
-	public String getAveragePricePerNight() {
-		return averagePricePerNight;
+	public double getGuestReview() {
+		return guestReview;
 	}
 
 	/**
-	 * @param averagePricePerNight the averagePricePerNight to set
+	 * @param guestReview the guestReview to set
 	 */
-	public void setAveragePricePerNight(String averagePricePerNight) {
-		this.averagePricePerNight = averagePricePerNight;
-	}
-
-	/**
-	 * @return the feesAndTax
-	 */
-	public String getFeesAndTax() {
-		return feesAndTax;
-	}
-
-	/**
-	 * @param feesAndTax the feesAndTax to set
-	 */
-	public void setFeesAndTax(String feesAndTax) {
-		this.feesAndTax = feesAndTax;
-	}
-
-	/**
-	 * @return the currency
-	 */
-	public String getCurrency() {
-		return currency;
-	}
-
-	/**
-	 * @param currency the currency to set
-	 */
-	public void setCurrency(String currency) {
-		this.currency = currency;
+	public void setGuestReview(double guestReview) {
+		this.guestReview = guestReview;
 	}
 
 	/**
@@ -175,13 +105,83 @@ public class DealResultDTO {
 	}
 
 	/**
+	 * @return the numberOfReviews
+	 */
+	public int getNumberOfReviews() {
+		return numberOfReviews;
+	}
+
+	/**
+	 * @param numberOfReviews the numberOfReviews to set
+	 */
+	public void setNumberOfReviews(int numberOfReviews) {
+		this.numberOfReviews = numberOfReviews;
+	}
+
+	/**
+	 * @return the newPrice
+	 */
+	public double getNewPrice() {
+		return newPrice;
+	}
+
+	/**
+	 * @param newPrice the newPrice to set
+	 */
+	public void setNewPrice(double newPrice) {
+		this.newPrice = newPrice;
+	}
+
+	/**
+	 * @return the oldPrice
+	 */
+	public double getOldPrice() {
+		return oldPrice;
+	}
+
+	/**
+	 * @param oldPrice the oldPrice to set
+	 */
+	public void setOldPrice(double oldPrice) {
+		this.oldPrice = oldPrice;
+	}
+
+	/**
+	 * @return the destinationLongName
+	 */
+	public String getDestinationLongName() {
+		return destinationLongName;
+	}
+
+	/**
+	 * @param destinationLongName the destinationLongName to set
+	 */
+	public void setDestinationLongName(String destinationLongName) {
+		this.destinationLongName = destinationLongName;
+	}
+
+	/**
+	 * @return the hotelCity
+	 */
+	public String getHotelCity() {
+		return hotelCity;
+	}
+
+	/**
+	 * @param hotelCity the hotelCity to set
+	 */
+	public void setHotelCity(String hotelCity) {
+		this.hotelCity = hotelCity;
+	}
+
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "DealResultDTO [destinationName=" + destinationName + ", hotelId=" + hotelId + ", hotelName=" + hotelName
-				+ ", hotelImageUrl=" + hotelImageUrl + ", hotelDesc=" + hotelDesc + ", language=" + language
-				+ ", hotelRating=" + hotelRating + ", averagePricePerNight=" + averagePricePerNight + ", feesAndTax="
-				+ feesAndTax + ", currency=" + currency + ", hotelUrl=" + hotelUrl + "]";
+		return "DealResultDTO [hotelName=" + hotelName + ", hotelImageUrl=" + hotelImageUrl + ", hotelRating="
+				+ hotelRating + ", guestReview=" + guestReview + ", hotelUrl=" + hotelUrl + ", numberOfReviews="
+				+ numberOfReviews + ", newPrice=" + newPrice + ", oldPrice=" + oldPrice + ", currency=" + currency
+				+ ", destinationLongName=" + destinationLongName + ", hotelCity=" + hotelCity + "]";
 	}
 }

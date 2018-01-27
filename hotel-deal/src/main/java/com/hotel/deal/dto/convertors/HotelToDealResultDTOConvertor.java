@@ -21,29 +21,22 @@ public class HotelToDealResultDTOConvertor {
 	public static DealResultDTO convert(Hotel hotel) {
 		DealResultDTO dealResultDTO = new DealResultDTO();
 		
-		dealResultDTO.setAveragePricePerNight(hotel.getHotelPricingInfo().getAveragePriceValue().toString());
 		dealResultDTO.setCurrency(hotel.getHotelPricingInfo().getCurrency());
-		dealResultDTO.setDestinationName(hotel.getDestination().getLongName());
-		
-		if(hotel.getHotelPricingInfo().getHotelTotalMandatoryTaxesAndFees() != null) {
-			dealResultDTO.setFeesAndTax(hotel.getHotelPricingInfo().getHotelTotalMandatoryTaxesAndFees().toString());
-		} else {
-			dealResultDTO.setFeesAndTax("0");
-		}
-		
-		dealResultDTO.setHotelDesc(hotel.getHotelInfo().getDescription());
+		dealResultDTO.setGuestReview(hotel.getHotelInfo().getHotelGuestReviewRating().doubleValue());
+		dealResultDTO.setHotelCity(hotel.getHotelInfo().getHotelCity());
 		dealResultDTO.setHotelImageUrl(hotel.getHotelInfo().getHotelImageUrl());
-		dealResultDTO.setHotelName(hotel.getHotelInfo().getHotelLongDestination());
+		dealResultDTO.setDestinationLongName(hotel.getDestination().getLongName());
+		dealResultDTO.setHotelName(hotel.getHotelInfo().getHotelName());
 		dealResultDTO.setHotelRating(hotel.getHotelInfo().getHotelStarRating());
+		dealResultDTO.setNewPrice(hotel.getHotelPricingInfo().getAveragePriceValue().doubleValue());
+		dealResultDTO.setNumberOfReviews(hotel.getHotelInfo().getHotelReviewTotal());
+		dealResultDTO.setOldPrice(hotel.getHotelPricingInfo().getOriginalPricePerNight().doubleValue());
 		
 		try {
 			dealResultDTO.setHotelUrl(URLDecoder.decode(hotel.getHotelUrls().getHotelInfositeUrl(), "UTF-8"));
 		} catch (UnsupportedEncodingException e) {
 			dealResultDTO.setHotelUrl(hotel.getHotelUrls().getHotelInfositeUrl());
 		}
-		
-		dealResultDTO.setLanguage(hotel.getHotelInfo().getLanguage());
-		dealResultDTO.setHotelId(hotel.getHotelInfo().getHotelId());
 		
 		return dealResultDTO;
 	}

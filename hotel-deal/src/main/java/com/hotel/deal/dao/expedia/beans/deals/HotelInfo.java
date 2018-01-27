@@ -44,6 +44,7 @@ public class HotelInfo {
 	private String statusDescription;
 	private boolean carPackage;
 	private boolean allInclusive;
+	private int hotelReviewTotal;
 	
 	/**
 	 * @return the allInclusive
@@ -480,6 +481,20 @@ public class HotelInfo {
 	}
 
 	/**
+	 * @return the hotelReviewTotal
+	 */
+	public int getHotelReviewTotal() {
+		return hotelReviewTotal;
+	}
+
+	/**
+	 * @param hotelReviewTotal the hotelReviewTotal to set
+	 */
+	public void setHotelReviewTotal(int hotelReviewTotal) {
+		this.hotelReviewTotal = hotelReviewTotal;
+	}
+
+	/**
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -514,6 +529,7 @@ public class HotelInfo {
 				+ ", getPromotionTag()=" + getPromotionTag() + ", getRawAppealScore()=" + getRawAppealScore()
 				+ ", getRelevanceScore()=" + getRelevanceScore() + ", getStatusCode()=" + getStatusCode()
 				+ ", getStatusDescription()=" + getStatusDescription() + ", isCarPackage()=" + isCarPackage()
+				+ ", getHotelReviewTotal()=" + getHotelReviewTotal()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
 	}
