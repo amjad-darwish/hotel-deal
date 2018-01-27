@@ -1,0 +1,11 @@
+language: java
+script:
+  - jdk_switcher use oraclejdk8
+jdk:
+  - oraclejdk8
+deploy:
+  provider: heroku
+  api_key: ba031985-a918-418b-85df-d84434907ab7
+  app: hotel-deal
+  on:
+repo: amjad-darwish/hotel-deal

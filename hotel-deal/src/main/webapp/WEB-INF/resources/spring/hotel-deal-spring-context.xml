@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:task="http://www.springframework.org/schema/task"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://www.springframework.org/schema/task 
+        http://www.springframework.org/schema/task/spring-task-4.2.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+        <mvc:annotation-driven />
+        
+        <context:component-scan base-package="com.hotel.deal" />
+        <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+        
+        <task:executor id="asyncExecutor" pool-size="25-50" queue-capacity="250" keep-alive="120" rejection-policy="CALLER_RUNS"/>
+        <task:annotation-driven executor="asyncExecutor"/>
+        
+        <bean class="org.springframework.http.client.SimpleClientHttpRequestFactory" id="clientHttpRequestFactory">
+        	<property name="connectTimeout" value="3000"></property>
+        	<property name="readTimeout" value="15000"></property>
+        </bean>
+        
+        <bean class="org.springframework.web.client.RestTemplate" id="restTemplate">
+        	<property name="requestFactory" ref="clientHttpRequestFactory"></property>
+        </bean>        
+        
+        <bean id="expediaRestConnectorConfig" class="com.hotel.deal.connectors.config.HttpRestConnectorConfig">
+        	<property name="protocol" value="https"></property>
+        	<property name="host" value="offersvc.expedia.com"></property>
+        	<property name="contextRoot" value="offers"></property>
+        	<property name="method" value="GET"></property>
+        	<property name="uri" value="v2/getOffers"></property>
+        </bean>
+        
+        <bean class="com.hotel.deal.log.LoggerManager" id="loggerManager">
+        	<property name="loggers">
+        		<set>
+        			<bean class="com.hotel.deal.log.log4j.Log4jLogger">
+        				<property name="minLevel" value="TRACE"></property>
+        			</bean>
+        		</set>
+        	</property>
+        </bean>
+        
+        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	        <property name="prefix">
+	            <value>/WEB-INF/pages/</value>
+	        </property>
+	        <property name="suffix">
+	            <value>.jsp</value>
+	        </property>
+    	</bean>
+        
+        <mvc:resources location="/javascript/" mapping="/javascript/**"></mvc:resources>
+        <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
+        <mvc:resources location="/fonts/" mapping="/fonts/**"></mvc:resources>
+        <mvc:resources location="/images/" mapping="/images/**"></mvc:resources>
+</beans>

@@ -1,0 +1,202 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  		 					 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.expedia</groupId>
+  <artifactId>hotel-deal</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>hotel-deal Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+  	<commons-lang-version>2.6</commons-lang-version>
+  	
+  	<!-- Spring -->
+	<spring.framework-version>4.2.5.RELEASE</spring.framework-version>
+  	<jackson.databind-version>2.7.3</jackson.databind-version>
+		
+ 	<!-- Logging -->
+	<commons-logging-version>1.2</commons-logging-version>
+	<commons-logging-api-version>1.1</commons-logging-api-version>
+	<logback-classic-version>1.1.3</logback-classic-version>
+	<logback-core-version>1.1.3</logback-core-version>
+	<jcl-over-slf4j-version>1.7.21</jcl-over-slf4j-version>
+	<slf4j-api-version>1.7.21</slf4j-api-version>
+	<slf4j-log4j12-version>1.7.21</slf4j-log4j12-version>
+	<log4j-core-version>2.5</log4j-core-version>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>3.0.1</version>
+		<scope>provided</scope>
+	</dependency>
+	
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
+	    <scope>runtime</scope>
+	</dependency>
+ 
+	<dependency>
+	    <groupId>taglibs</groupId>
+	    <artifactId>standard</artifactId>
+	    <version>1.1.2</version>
+	    <scope>runtime</scope>
+	</dependency>	
+  	
+  	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.framework-version}</version>
+	</dependency>
+	
+ 	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring.framework-version}</version>
+	</dependency>
+  
+  	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aspects</artifactId>
+		<version>${spring.framework-version}</version>
+	</dependency>
+	
+  	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>${spring.framework-version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring.framework-version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.framework-version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${spring.framework-version}</version>
+	</dependency>
+	
+	<!-- Logging -->
+	<dependency>
+	  	<groupId>commons-logging</groupId>
+	  	<artifactId>commons-logging</artifactId>
+	  	<version>${commons-logging-version}</version>
+	  	<scope>provided</scope>
+	</dependency>
+		
+	<dependency>
+	  	<groupId>commons-logging</groupId>
+	  	<artifactId>commons-logging-api</artifactId>
+	  	<version>${commons-logging-api-version}</version>
+	 	<scope>provided</scope>
+	</dependency>
+		
+	<dependency>
+	  	<groupId>ch.qos.logback</groupId>
+	  	<artifactId>logback-core</artifactId>
+	  	<version>${logback-core-version}</version>
+	  	<scope>provided</scope>
+	</dependency>
+		
+	<dependency>
+	  	<groupId>ch.qos.logback</groupId>
+	  	<artifactId>logback-classic</artifactId>
+	  	<version>${logback-classic-version}</version>
+	  	<scope>provided</scope>
+	</dependency>
+		
+	<dependency>
+	  	<groupId>org.slf4j</groupId>
+	 	<artifactId>jcl-over-slf4j</artifactId>
+	  	<version>${jcl-over-slf4j-version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>${slf4j-api-version}</version>
+	</dependency>
+		
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<version>${slf4j-log4j12-version}</version>
+	</dependency>
+		
+	<dependency>
+		<groupId>org.apache.logging.log4j</groupId>
+		<artifactId>log4j-core</artifactId>
+		<version>${log4j-core-version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-core</artifactId>
+		<version>${jackson.databind-version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>${jackson.databind-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>commons-lang</groupId>
+	    <artifactId>commons-lang</artifactId>
+	    <version>${commons-lang-version}</version>
+	</dependency>
+  </dependencies>
+  
+  <build>
+    <finalName>hotel-deal</finalName>
+    
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
+      </plugin>
+      
+      <plugin>
+      	<groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.3</version>
+        <executions>
+        	<execution>
+            	<phase>package</phase>
+                <goals><goal>copy</goal></goals>
+                <configuration>
+                	<artifactItems>
+                		<artifactItem>
+                			<groupId>com.github.jsimone</groupId>
+                            <artifactId>webapp-runner</artifactId>
+                            <version>8.5.11.2</version>
+                            <destFileName>/webapp-runner.jar</destFileName>
+                        </artifactItem>
+                   	</artifactItems>
+                </configuration>
+            </execution>
+        </executions>
+	  </plugin>
+    </plugins>
+  </build>
+</project>
