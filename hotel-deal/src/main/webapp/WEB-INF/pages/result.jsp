@@ -47,8 +47,8 @@
 					<div><a href="${hotel.hotelUrl}" class="my-row small-txt">(${hotel.numberOfReviews} reviews)</a></div>
 					
 					<div id="price" class="my-row">
-						<fmt:formatNumber currencyCode="${hotel.currency}" value="${hotel.oldPrice}" pattern="#.##" var="oldAmount" type="currency" />
-						<fmt:formatNumber currencyCode="${hotel.currency}" value="${hotel.newPrice}" pattern="#.##" var="newAmount" type="currency" />
+						<fmt:formatNumber currencyCode="${hotel.currency}" value="${hotel.oldPrice}" pattern="$#.##" var="oldAmount" type="currency" />
+						<fmt:formatNumber currencyCode="${hotel.currency}" value="${hotel.newPrice}" pattern="$#.##" var="newAmount" type="currency" />
 						
 						<span id="oldPrice">${oldAmount}</span>
 						<span id="newPrice">${newAmount}</span>
