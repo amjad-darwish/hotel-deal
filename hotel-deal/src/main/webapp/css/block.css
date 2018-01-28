@@ -144,6 +144,7 @@
 		height: 100%;
 		min-width: 40px;
 		min-height: 40px;
+		border-color: #f5c32a;
 	}
 	
 	.dateTxt {
